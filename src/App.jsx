@@ -1,4 +1,5 @@
 import React from "react";
+import LembreteEntrada from "./LembreteEntrada";
 
 class App extends React.Component {
   constructor() {
@@ -8,10 +9,20 @@ class App extends React.Component {
     };
   }
 
+  adicionarLembrete = (lembrete) => {
+    this.state.lista.push(lembrete);
+
+    this.setState({ lista: this.state.lista });
+  };
+
   render() {
     return (
-      <div className="container bg-primary border">
-        <h1>Hello, Lembretes</h1>
+      <div className="container bg-primary rounded">
+        <div className="row">
+          <div className="col-12 mt-3">
+            <LembreteEntrada adicionarLembrete={this.adicionarLembrete} />
+          </div>
+        </div>
       </div>
     );
   }
