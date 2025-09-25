@@ -6,20 +6,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      lista: [
-        {
-          titulo: "preparar aula de programação",
-          favorito: false,
-        },
-        {
-          titulo: "Fazer feira",
-          favorito: false,
-        },
-        {
-          titulo: "Fazer marmita",
-          favorito: false,
-        },
-      ],
+      lista: [],
     };
   }
 
