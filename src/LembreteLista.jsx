@@ -15,7 +15,8 @@ export default class LembreteLista extends React.Component {
               <button className="btn btn-primary d-flex me-3">
                 <i className="fa-solid fa-star fa-2x"></i>
               </button>
-              <button className="btn btn-danger d-flex">
+              <button className="btn btn-danger d-flex" 
+                      onClick={() => this.props.removerLembrete(lembrete)}>
                 <i className="fa-solid fa-circle-xmark fa-2x"></i>
               </button>
             </div>

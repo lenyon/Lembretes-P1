@@ -3,8 +3,8 @@ import LembreteEntrada from "./LembreteEntrada";
 import LembreteLista from "./LembreteLista";
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       lista: [],
     };
@@ -16,12 +16,21 @@ class App extends React.Component {
     this.setState({ lista: this.state.lista });
   };
 
+  removerLembrete = (lembreteRemovido) => {
+    let novaLista = this.state.lista.filter( lembrete => lembrete != lembreteRemovido )
+
+    this.setState({lista: novaLista})
+  }
+
   render() {
     return (
       <div className="container bg-primary rounded">
         <div className="row">
           <div className="col-12">
-            <LembreteLista lembretes={this.state.lista} />
+            <LembreteLista 
+              lembretes={this.state.lista}
+              removerLembrete={this.removerLembrete}
+              />
           </div>
         </div>
 

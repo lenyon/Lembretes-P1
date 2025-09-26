@@ -5,6 +5,7 @@ export default class LembreteEntrada extends React.Component {
     super(props);
     this.state = {
       titulo: "",
+      favorito: false,
     };
   }
 
