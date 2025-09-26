@@ -16,9 +16,9 @@ export default class LembreteLista extends React.Component {
       <div className="container">
 
         <div className="row d-flex flex-grow-1 justify-content-center mt-3">
-          <div className="col-10">
+          <div className="col-10 p-0">
             <div className="card d-flex align-items-center">
-              <div className="card-body col-12" style={{background:'#f8f9fa'}}>
+              <div className="card-body col-12">
                   <div className="d-flex align-items-center ">
                     <h4 className="text-center flex-grow-1">
                       {lembrete.titulo}

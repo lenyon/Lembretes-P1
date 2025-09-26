@@ -14,8 +14,8 @@ class App extends React.Component {
 
   adicionarLembrete = (lembrete) => {
 
-    if (lembrete.titulo == ""){return};
-    
+    if (lembrete.titulo == "") { return };
+
     this.state.lista.push(lembrete);
 
     this.setState({ lista: this.state.lista });
@@ -47,11 +47,20 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="border rounded-3 p-3" style={{background:'#6891BA'}}>
-            
-            
-            <LembreteEntrada adicionarLembrete={this.adicionarLembrete} />
-            
+          <div className="border rounded-3 p-3 mt-3" style={{ background: '#6891BA' }}>
+
+            <div className="d-flex flex-column align-items-center">
+              <LembreteEntrada adicionarLembrete={this.adicionarLembrete} />
+
+              <button
+                className={`col-10 btn mt-2 ${this.state.filtroAtivo ? "btn-primary" : "btn-secondary"}`}
+                onClick={this.filtrarLembretes}
+              >
+                Filtrar favoritos
+              </button>
+
+            </div>
+
             <LembreteLista
               lembretes={this.state.lista}
               filtro={this.state.filtroAtivo}
@@ -59,14 +68,7 @@ class App extends React.Component {
               atualizarFavorito={this.atualizarFavorito}
             />
 
-            </div>
-            
-            <button
-              className={`btn mt-2 ${this.state.filtroAtivo ? "btn-primary" : "btn-outline-primary"}`}
-              onClick={this.filtrarLembretes}
-            >
-              Filtrar favoritos
-            </button>
+          </div>
         </div>
       </div>
     );

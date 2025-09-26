@@ -21,7 +21,7 @@ export default class LembreteEntrada extends React.Component {
 
   render() {
     return (
-      <div className="container col-10 d-flex mt-3">
+      <div className="container col-10 d-flex mt-3 p-0">
         <input 
           type="text"
           className="form-control text-center me-3"
