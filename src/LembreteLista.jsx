@@ -7,25 +7,42 @@ export default class LembreteLista extends React.Component {
 
   render() {
     let lembretes;
-    this.props.filtro ?
-    lembretes = this.props.lembretes.filter(lembrete => lembrete.favorito):
-    lembretes = this.props.lembretes
+    this.props.filtro
+      ? (lembretes = this.props.lembretes.filter(
+          (lembrete) => lembrete.favorito
+        ))
+      : (lembretes = this.props.lembretes);
     return lembretes.map((lembrete) => (
-      <div className="card">
-        <div className="card-body">
-          <div className=" d-flex flex-grow-1 align-items-center">
-            <h4 className="text-center flex-grow-1">{lembrete.titulo}</h4>
-            <div className="d-flex">
-              <button className="btn btn-primary d-flex me-3"
-                      onClick={() => this.props.atualizarFavorito(lembrete)}>
-                {lembrete.favorito ?
-                (<i className="fa-solid fa-star fa-2x"></i>):
-                (<i className="fa-regular fa-star fa-2x"></i>)}
-              </button>
-              <button className="btn btn-danger d-flex" 
-                      onClick={() => this.props.removerLembrete(lembrete)}>
-                <i className="fa-solid fa-circle-xmark fa-2x"></i>
-              </button>
+      <div className="container">
+
+        <div className="row d-flex flex-grow-1 justify-content-center mt-3">
+          <div className="col-10">
+            <div className="card d-flex align-items-center">
+              <div className="card-body col-12" style={{background:'#f8f9fa'}}>
+                  <div className="d-flex align-items-center ">
+                    <h4 className="text-center flex-grow-1">
+                      {lembrete.titulo}
+                    </h4>
+                    <div className="d-flex ">
+                      <button
+                        className="btn btn-outline-light active d-flex" style={{color:'#FFD43B'}}
+                        onClick={() => this.props.atualizarFavorito(lembrete)}
+                      >
+                        {lembrete.favorito ? (
+                          <i className="fa-solid fa-star fa"></i>
+                        ) : (
+                          <i className="fa-regular fa-star fa"></i>
+                        )}
+                      </button>
+                      <button
+                        className="btn btn-outline-light active d-flex" style={{color:'#FF0000'}}
+                        onClick={() => this.props.removerLembrete(lembrete)}
+                      >
+                        <i className="fa-regular fa-circle-xmark fa"></i>
+                      </button>
+                    </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
