@@ -15,7 +15,7 @@ export default class LembreteLista extends React.Component {
               <button className="btn btn-primary d-flex me-3"
                       onClick={() => this.props.atualizarFavorito(lembrete)}>
                 {lembrete.favorito ?
-                (<i className="fa-solid fa-star fa-2x fa-yellow"></i>):
+                (<i className="fa-solid fa-star fa-2x"></i>):
                 (<i className="fa-regular fa-star fa-2x"></i>)}
               </button>
               <button className="btn btn-danger d-flex" 
