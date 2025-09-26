@@ -12,6 +12,9 @@ class App extends React.Component {
   }
 
   adicionarLembrete = (lembrete) => {
+
+    if (lembrete.titulo == ""){return};
+    
     this.state.lista.push(lembrete);
 
     this.setState({ lista: this.state.lista });
