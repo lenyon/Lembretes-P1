@@ -6,7 +6,11 @@ export default class LembreteLista extends React.Component {
   }
 
   render() {
-    return this.props.lembretes.map((lembrete) => (
+    let lembretes;
+    this.props.filtro ?
+    lembretes = this.props.lembretes.filter(lembrete => lembrete.favorito):
+    lembretes = this.props.lembretes
+    return lembretes.map((lembrete) => (
       <div className="card">
         <div className="card-body">
           <div className=" d-flex flex-grow-1 align-items-center">

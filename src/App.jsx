@@ -7,6 +7,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       lista: [],
+      filtroAtivo: false
     };
   }
 
@@ -32,13 +33,20 @@ class App extends React.Component {
     this.setState({lista: this.state.lista})
   }
 
+  filtrarLembretes = () => {
+    
+    this.setState({filtroAtivo: !this.state.filtroAtivo})
+
+  }
+
   render() {
     return (
-      <div className="container bg-primary rounded">
+      <div className="container rounded">
         <div className="row">
           <div className="col-12">
             <LembreteLista 
               lembretes={this.state.lista}
+              filtro={this.state.filtroAtivo}
               removerLembrete={this.removerLembrete}
               atualizarFavorito={this.atualizarFavorito}
               />
@@ -48,6 +56,8 @@ class App extends React.Component {
         <div className="row">
           <div className="col-12 mt-3">
             <LembreteEntrada adicionarLembrete={this.adicionarLembrete} />
+            <button className="btn btn-outline-primary w-100 mt-2"
+                    onClick={this.filtrarLembretes}>Filtrar favoritos</button>
           </div>
         </div>
       </div>
