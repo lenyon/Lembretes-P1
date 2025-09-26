@@ -1,3 +1,4 @@
+
 import React from "react";
 import LembreteEntrada from "./LembreteEntrada";
 import LembreteLista from "./LembreteLista";
@@ -58,7 +59,7 @@ class App extends React.Component {
             </div>
             
             <button
-              className="btn btn-outline-primary w-100 mt-2"
+              className={`btn  w-100 mt-2 ${this.state.filtroAtivo ? "btn-primary" : "btn-outline-primary"}`}
               onClick={this.filtrarLembretes}
             >
               Filtrar favoritos
