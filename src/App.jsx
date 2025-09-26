@@ -59,7 +59,7 @@ class App extends React.Component {
             </div>
             
             <button
-              className={`btn  w-100 mt-2 ${this.state.filtroAtivo ? "btn-primary" : "btn-outline-primary"}`}
+              className={`btn mt-2 ${this.state.filtroAtivo ? "btn-primary" : "btn-outline-primary"}`}
               onClick={this.filtrarLembretes}
             >
               Filtrar favoritos
