@@ -22,6 +22,16 @@ class App extends React.Component {
     this.setState({lista: novaLista})
   }
 
+  atualizarFavorito = (lembreteAtualizado) => {
+    this.state.lista.filter(lembrete => {
+      if (lembrete == lembreteAtualizado){
+        lembrete.favorito = !lembrete.favorito
+      }
+    })
+
+    this.setState({lista: this.state.lista})
+  }
+
   render() {
     return (
       <div className="container bg-primary rounded">
@@ -30,6 +40,7 @@ class App extends React.Component {
             <LembreteLista 
               lembretes={this.state.lista}
               removerLembrete={this.removerLembrete}
+              atualizarFavorito={this.atualizarFavorito}
               />
           </div>
         </div>
